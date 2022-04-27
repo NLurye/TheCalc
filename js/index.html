@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script type="text/javascript">
+    let toEmpty = false;
+  $(document).ready(function(){
+  $("button").click(function(){
+    if ((this.id=="C") || (Boolean(toEmpty))){
+      $("#BigScreen").empty();
+      $("#SmallScreen").empty();
+      if((Boolean(toEmpty)) && (this.id!="C"))
+        $("#BigScreen").append(this.id);
+      toEmpty = false;
+    }
+    else
+    {
+      if(this.id=="=") {
+        $("#SmallScreen").append(eval($("#BigScreen").text()));
+        toEmpty = true;
+      }
+    $("#BigScreen").append(this.id)
+    }
+
+
+  });
+  });
+  </script>
+</head>
+<body>
+<section id="container">
+<section id="BigScreen"></section>
+<section id="SmallScreen"></section>
+<div class="buttons">
+  <button id = "7">7</button>
+  <button id = "8">8</button>
+  <button id = "9">9</button>
+  <button id = "C">C</button>
+  <button id = "=">=</button>
+  <button id = "4">4</button>
+  <button id = "5">5</button>
+  <button id = "6">6</button>
+  <button id = "*">X</button>
+  <button id = "/">/</button>
+  <button id = "1">1</button>
+  <button id = "2">2</button>
+  <button id = "3">3</button>
+  <button id = "+">+</button>
+  <button id = "-">-</button>
+  </div>
+</section>
+</body>
+</html>
